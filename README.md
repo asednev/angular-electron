@@ -1,7 +1,7 @@
 
 # Crypto Ticker
 
-Electo app based on Angular Electon (https://github.com/maximegris/angular-electron.git).
+Electron app based on Angular Electon boilerplate (https://github.com/maximegris/angular-electron.git).
 
 ## Stack
 
