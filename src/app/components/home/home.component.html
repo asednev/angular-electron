@@ -4,6 +4,8 @@
   </h1>
 </div>
 
+<app-ticker></app-ticker>
+
 <ul>
   <li *ngFor="let symbol of symbols">
     {{ symbol }} - {{ details[symbol].last | currency:'USD':true }} ({{ details[symbol].percentChange | percent: '1.2-2' }})
