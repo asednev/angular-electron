@@ -16,6 +16,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { ElectronService } from "./providers/electron.service";
 
 import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { environment } from "environments";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
@@ -41,6 +43,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25 // Retains last 25 states
+    }),
     TickerModule
   ],
   providers: [ElectronService],

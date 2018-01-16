@@ -38,7 +38,8 @@
   },
   "dependencies": {
     "@angular-devkit/core": "0.0.23",
-    "@angular-devkit/schematics": "0.0.48"
+    "@angular-devkit/schematics": "0.0.48",
+    "@ngrx/store-devtools": "^4.1.1"
   },
   "devDependencies": {
     "@angular/cli": "1.6.4",
