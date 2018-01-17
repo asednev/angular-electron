@@ -1,8 +1,8 @@
-export type Poloniex = {
+export interface Poloniex {
   [pair: string]: PoloniexTicker;
-};
+}
 
-export type PoloniexTicker = {
+export interface PoloniexTicker {
   id: number;
   last: number;
   lowestAsk: number;
@@ -13,4 +13,4 @@ export type PoloniexTicker = {
   isFrozen: boolean;
   high24hr: number;
   low24hr: number;
-};
+}

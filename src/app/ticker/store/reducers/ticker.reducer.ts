@@ -1,6 +1,5 @@
 import * as fromTickers from "../actions";
-import { TickerItem } from "../../models/ticker-item.model";
-import { TickerMap } from "app/ticker/models/ticker-map.model";
+import { TickerMap, TickerItem } from "app/ticker/models";
 import * as _ from "lodash";
 
 export interface TickerState {
@@ -17,7 +16,7 @@ export function reducer(
 ): TickerState {
   switch (action.type) {
     case fromTickers.UPDATE_TICKER:
-      let newState = _.cloneDeep(state);
+      const newState = _.cloneDeep(state);
       newState.tickers[action.payload.symbol] = _.cloneDeep(action.payload);
       return newState;
   }

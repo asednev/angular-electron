@@ -1,5 +1,5 @@
 import { TickerItem } from "app/ticker/models";
 
-export type TickerMap = {
+export interface TickerMap {
   [symbol: string]: TickerItem;
-};
+}

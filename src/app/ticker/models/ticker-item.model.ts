@@ -1,6 +1,6 @@
-export type TickerItem = {
+export interface TickerItem {
   symbol: string;
   last: number;
   percentChange: number;
   pairMapping: string;
-};
+}

@@ -1,9 +1,5 @@
-<p>
-  ticker works!
-</p>
 <ul>
-  <li *ngFor="let symbol of tickerKeys">
-    {{ symbol }} - {{ (tickers$ | async)[symbol].last | currency:'USD':true }} ({{ (tickers$ | async)[symbol].percentChange |
-    percent: '1.2-2' }})
+  <li *ngFor="let ticker of (tickers$ | async)">
+    {{ ticker.symbol }} - {{ ticker.last | currency:'USD':true }} ({{ ticker.percentChange | percent: '1.2-2' }})
   </li>
 </ul>
