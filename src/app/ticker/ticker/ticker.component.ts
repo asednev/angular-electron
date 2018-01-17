@@ -10,6 +10,8 @@ import { Poloniex, TickerItem } from "app/ticker/models";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { TickerMap } from "app/ticker/models/ticker-map.model";
+import { createFeatureSelector } from "@ngrx/store/src/selector";
+import * as _ from "lodash";
 
 @Component({
   selector: "app-ticker",
@@ -26,12 +28,6 @@ export class TickerComponent implements OnInit {
   tickerKeys: string[];
 
   ngOnInit() {
-    console.log("ngOnInit, store=", this.store);
-
-    this.store.subscribe(x => {
-      console.log("store update", x);
-    });
-
     this.tickers$ = this.store.select(
       createSelector(
         tickerFeatureSelector,
@@ -39,7 +35,6 @@ export class TickerComponent implements OnInit {
       )
     );
     this.tickers$.subscribe(value => {
-      console.log("!!", value);
       if (!value) {
         return;
       }
