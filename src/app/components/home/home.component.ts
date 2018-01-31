@@ -9,10 +9,10 @@ import { IntervalObservable } from "rxjs/Observable/IntervalObservable";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
-
   symbols: string[] = [];
   details: { [symbol: string]: TickerItem } = {};
+
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
     this._createSymbol("BTC", "USDT_BTC");
